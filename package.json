@@ -1,12 +1,25 @@
 {
-  "name": "telegram-boy-course",
+  "name": "telegram-bot-course",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BessarabYura/telegram-bot-course.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BessarabYura/telegram-bot-course/issues"
+  },
+  "homepage": "https://github.com/BessarabYura/telegram-bot-course#readme",
+  "description": "",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0",
+    "nodemon": "^2.0.20"
+  }
 }
