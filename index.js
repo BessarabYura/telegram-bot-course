@@ -1,10 +1,19 @@
-const TelegramApi = require('node-telegram-bot-api')
+const TelegramBot = require('node-telegram-bot-api');
 
-const token = '5950662245:AAG9R9QFxIDm1M91XCfav4Wa9rX61LXf9qs'
+// Вставьте свой токен полученный у BotFather
+const token = '6341673392:AAG7Ue1QF61EO1DA-MQD8zy8BCZ-Q9DxOsI';
+// Инициализация бота
+const bot = new TelegramBot(token, { polling: true });
 
-const bot = new TelegramApi(token, {polling: true})
+// Обработка команды /start
+bot.onText(/\/start/, (msg) => {
+    bot.sendMessage(msg.chat.id, 'Привет! Я бот-эхо. Просто напиши мне что-нибудь, и я повторю это!');
+});
 
+// Эхо-функция: бот повторяет сообщение пользователя
+bot.on('message', (msg) => {
+    const chatId = msg.chat.id;
+    const messageText = msg.text.toString();
 
-bot.on('message', msg =>{
-    console.log(msg)
-})
+    bot.sendMessage(chatId, `Вы написали: ${messageText}`);
+});
